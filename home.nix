@@ -48,6 +48,12 @@ in
     if test -x /opt/homebrew/bin/brew
       eval (/opt/homebrew/bin/brew shellenv)
     end
+
+    if test "$TERM_PROGRAM" = "vscode"
+      set -x EDITOR code --wait
+    else
+      set -x EDITOR vim
+    end
   '';
 
   programs.vscode.enable = true;
