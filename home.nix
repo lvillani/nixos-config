@@ -38,6 +38,9 @@ in
 
     p1 = "ping 1.1.1.1";
     p8 = "ping 8.8.8.8";
+
+    docker-here = "docker run --rm -it -v (pwd):(pwd) -w (pwd)";
+    docker-here2 = "docker run --rm -it -v (pwd):(pwd) -w (pwd) -u (id -u):(id -g)";
   };
   programs.fish.shellInit = ''
     set fish_greeting
