@@ -11,6 +11,9 @@ in
   programs.home-manager.enable = true;
 
   programs.fish.enable = true;
+  programs.fish.functions = {
+    fish_prompt = builtins.readFile ./files/fish_prompt.fish;
+  };
   programs.fish.shellAbbrs = {
     g = "git";
     r = "exec fish";
