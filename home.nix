@@ -57,6 +57,16 @@ in
     end
   '';
 
+  programs.ssh.enable = true;
+  programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
+  programs.ssh.includes = [ "config.d" ];
+  programs.ssh.matchBlocks = {
+    "*" = {
+      serverAliveCountMax = 1;
+      serverAliveInterval = 30;
+    };
+  };
+
   programs.vim.enable = true;
 
   programs.vscode.enable = true;
