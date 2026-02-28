@@ -1,6 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 let
-  homeDirectory = if builtins.currentSystem == "aarch64-darwin" then "/Users/user" else "/home/user";
+  homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/user" else "/home/user";
 in
 {
   home.stateVersion = "25.11";
