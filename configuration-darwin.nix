@@ -11,4 +11,6 @@
   networking.applicationFirewall.enable = true;
   networking.applicationFirewall.allowSigned = true;
   networking.applicationFirewall.allowSignedApp = false;
+
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
