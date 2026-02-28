@@ -12,7 +12,7 @@ in
 
   programs.fish.enable = true;
   programs.fish.functions = {
-    fish_prompt = builtins.readFile ./files/fish_prompt.fish;
+    fish_prompt = builtins.readFile ./files/fish/fish_prompt.fish;
   };
   programs.fish.plugins = [
     {
