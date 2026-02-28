@@ -23,6 +23,9 @@ in
   programs.fish.shellAbbrs = {
     g = "git";
     r = "exec fish";
+
+    p1 = "ping 1.1.1.1";
+    p8 = "ping 8.8.8.8";
   };
   programs.fish.shellInit = ''
     set fish_greeting
