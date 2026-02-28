@@ -14,6 +14,12 @@ in
   programs.fish.functions = {
     fish_prompt = builtins.readFile ./files/fish_prompt.fish;
   };
+  programs.fish.plugins = [
+    {
+      name = "done";
+      src = pkgs.fishPlugins.done.src;
+    }
+  ];
   programs.fish.shellAbbrs = {
     g = "git";
     r = "exec fish";
