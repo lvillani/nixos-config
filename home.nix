@@ -44,6 +44,10 @@ in
   };
   programs.fish.shellInit = ''
     set fish_greeting
+
+    if test -x /opt/homebrew/bin/brew
+      eval (/opt/homebrew/bin/brew shellenv)
+    end
   '';
 
   programs.vscode.enable = true;
