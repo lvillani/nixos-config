@@ -10,6 +10,15 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.fish.enable = true;
+  programs.fish.shellAbbrs = {
+    g = "git";
+    r = "exec fish";
+  };
+  programs.fish.shellInit = ''
+    set fish_greeting
+  '';
+
   programs.vscode.enable = true;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
   programs.vscode.profiles.default.enableUpdateCheck = false;
