@@ -14,6 +14,10 @@ in
   home.username = "user";
 
   home.file = {
+    ".config/fish" = {
+      source = ./files/fish;
+      recursive = true;
+    };
     "${vscodeUserDirectory}/snippets" = {
       source = ./files/vscode/snippets;
       recursive = true;
@@ -23,9 +27,6 @@ in
   programs.home-manager.enable = true;
 
   programs.fish.enable = true;
-  programs.fish.functions = {
-    fish_prompt = builtins.readFile ./files/fish/fish_prompt.fish;
-  };
   programs.fish.plugins = [
     {
       name = "done";
