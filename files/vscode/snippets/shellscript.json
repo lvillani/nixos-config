@@ -1,0 +1,21 @@
+{
+  "Bash Normalized Script": {
+    "description": "Normalized script pattern template - https://github.blog/2015-06-30-scripts-to-rule-them-all/",
+    "isFileTemplate": true,
+    "prefix": "script",
+    "body": [
+      "#!/usr/bin/env bash",
+      "",
+      "set -Eeuo pipefail",
+      "IFS=$'\\n\\t'",
+      "",
+      "HERE=\"$(cd \"$(dirname \"\\$0\")\" && pwd)\"",
+      "TOP_LEVEL=\"$(cd \"\\$HERE/../\" && pwd)\"",
+      "",
+      "cd \"\\$TOP_LEVEL\"",
+      "",
+      "$0",
+      ""
+    ]
+  }
+}
