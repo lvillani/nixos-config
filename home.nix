@@ -68,6 +68,22 @@ in
   };
 
   programs.vim.enable = true;
+  programs.vim.extraConfig = ''
+    filetype plugin indent on
+    set autoindent
+    set backspace=indent,eol,start
+    set expandtab
+    set hlsearch
+    set incsearch
+    set linebreak
+    set nocompatible
+    set number relativenumber
+    set ruler
+    set shiftwidth=4
+    set showcmd
+    set tabstop=4
+    syntax on
+  '';
 
   programs.vscode.enable = true;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
