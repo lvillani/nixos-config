@@ -57,6 +57,69 @@ in
     end
   '';
 
+  programs.git.enable = true;
+  programs.git.ignores = [
+    ".cache"
+    ".DS_Store"
+    ".idea"
+    ".venv"
+    ".vscode"
+  ];
+  programs.git.settings = {
+    advice.detachedHead = false;
+    alias.b = "branch";
+    alias.c = "commit";
+    alias.caanr = "commit --all --amend --no-edit --reset-author";
+    alias.canr = "commit --amend --no-edit --reset-author";
+    alias.cl = "clean -dffx -e .idea -e .vscode -e .venv -e venv";
+    alias.co = "checkout";
+    alias.cob = "checkout -b";
+    alias.cp = "cherry-pick";
+    alias.cpa = "cherry-pick --abort";
+    alias.cpc = "cherry-pick --continue";
+    alias.d = "diff";
+    alias.fp = "fetch --prune";
+    alias.fppt = "fetch --prune --prune-tags";
+    alias.gcap = "gc --aggressive --prune";
+    alias.l = "log --graph --oneline";
+    alias.p = "push";
+    alias.pf = "push --force-with-lease";
+    alias.poh = "push --set-upstream origin HEAD";
+    alias.pt = "push --tags";
+    alias.pu = "pull --autostash --rebase";
+    alias.r = "rebase";
+    alias.ra = "rebase --abort";
+    alias.rc = "rebase --continue";
+    alias.ri = "rebase --interactive";
+    alias.s = "status --short";
+    alias.t = "tag";
+    alias.td = "tag --delete";
+    alias.tl = "tag --list";
+    alias.wip = "commit -am \"wip [skip ci]\" --no-verify";
+    alias.wip2 = "commit -am \"wip\" --no-verify";
+    commit.verbose = true;
+    diff.algorithm = "histogram";
+    diff.colorMoved = "plain";
+    diff.mnemonicPrefix = true;
+    diff.renames = true;
+    fetch.all = false;
+    fetch.prune = true;
+    fetch.pruneTags = true;
+    pull.rebase = true;
+    push.autoSetupRemote = true;
+    push.default = "simple";
+    rebase.autoSquash = true;
+    rebase.autoStash = true;
+    rebase.updateRefs = true;
+    rerere.autoupdate = true;
+    rerere.enabled = true;
+    submodule.recurse = true;
+    tag.sort = "version:refname";
+    user.email = "lorenzo@villani.me";
+    user.name = "Lorenzo Villani";
+    user.useConfigOnly = true;
+  };
+
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
   programs.ssh.includes = [ "config.d" ];
