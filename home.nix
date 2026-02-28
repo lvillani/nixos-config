@@ -18,6 +18,10 @@ in
       source = ./files/fish;
       recursive = true;
     };
+    "${vscodeUserDirectory}/prompts" = {
+      source = ./files/vscode/prompts;
+      recursive = true;
+    };
     "${vscodeUserDirectory}/snippets" = {
       source = ./files/vscode/snippets;
       recursive = true;
