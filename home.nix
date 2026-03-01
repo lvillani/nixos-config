@@ -125,6 +125,9 @@ in
     user.useConfigOnly = true;
   };
 
+  programs.go.enable = true;
+  programs.go.telemetry.mode = "off";
+
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
   programs.ssh.includes = [ "config.d" ];
@@ -161,6 +164,7 @@ in
     [
       github.copilot
       github.copilot-chat
+      golang.go
       jnoortheen.nix-ide
       redhat.vscode-yaml
     ]
