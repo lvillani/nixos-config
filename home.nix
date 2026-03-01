@@ -184,6 +184,7 @@ in
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
     "editor.inlineSuggest.minShowDelay" = 1000;
+    "files.autoSave" = "onFocusChange";
     "github.copilot.nextEditSuggestions.enabled" = true;
     "telemetry.telemetryLevel" = "off";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
