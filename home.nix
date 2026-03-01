@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then /Users/user else /home/user;
+  homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then /Users/user else "/home/user";
 
   vscodeUserDirectory =
     if pkgs.stdenv.hostPlatform.isDarwin then
