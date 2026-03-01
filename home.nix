@@ -159,6 +159,8 @@ in
   programs.vscode.profiles.default.extensions =
     with pkgs.vscode-extensions;
     [
+      github.copilot
+      github.copilot-chat
       jnoortheen.nix-ide
       redhat.vscode-yaml
     ]
@@ -177,6 +179,8 @@ in
     "[yaml]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
+    "editor.inlineSuggest.minShowDelay" = 1000;
+    "github.copilot.nextEditSuggestions.enabled" = true;
     "telemetry.telemetryLevel" = "off";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
