@@ -160,6 +160,7 @@ in
     with pkgs.vscode-extensions;
     [
       jnoortheen.nix-ide
+      redhat.vscode-yaml
     ]
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
@@ -173,6 +174,10 @@ in
     "[nix]" = {
       "editor.formatOnSave" = true;
     };
+    "[yaml]" = {
+      "editor.defaultFormatter" = "redhat.vscode-yaml";
+    };
     "telemetry.telemetryLevel" = "off";
+    "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
 }
