@@ -156,4 +156,23 @@ in
   programs.vscode.enable = true;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
   programs.vscode.profiles.default.enableUpdateCheck = false;
+  programs.vscode.profiles.default.extensions =
+    with pkgs.vscode-extensions;
+    [
+      jnoortheen.nix-ide
+    ]
+    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "rewrap-revived";
+        publisher = "dnut";
+        version = "1.16.3";
+        sha256 = "sha256-KgvAN/zsGf0SKnOeKAfzl6TUqfU5WJ6OeKZjSGSGSvE=";
+      }
+    ];
+  programs.vscode.profiles.default.userSettings = {
+    "[nix]" = {
+      "editor.formatOnSave" = true;
+    };
+    "telemetry.telemetryLevel" = "off";
+  };
 }
