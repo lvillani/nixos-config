@@ -2,9 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-    determinate.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -21,7 +18,6 @@
         modules = [
           ./configuration-common.nix
           ./configuration.nix
-          inputs.determinate.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
         ];
       };
@@ -32,7 +28,6 @@
         modules = [
           ./configuration-common.nix
           ./configuration-darwin.nix
-          inputs.determinate.darwinModules.default
           inputs.home-manager.darwinModules.home-manager
         ];
       };
