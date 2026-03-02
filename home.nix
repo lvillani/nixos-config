@@ -130,7 +130,7 @@ in
 
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
-  programs.ssh.includes = [ "config.d" ];
+  programs.ssh.includes = [ "config.d/*.conf" ];
   programs.ssh.matchBlocks = {
     "*" = {
       serverAliveCountMax = 1;
