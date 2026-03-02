@@ -29,6 +29,11 @@ in
     };
   };
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   programs.home-manager.enable = true;
 
   programs.fish.enable = true;
