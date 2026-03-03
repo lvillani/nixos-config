@@ -5,6 +5,7 @@
 
   home-manager.users.user = ./home.nix;
 
+  nix.channel.enable = false;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
