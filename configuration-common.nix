@@ -7,6 +7,7 @@
 
   nix.channel.enable = false;
   nix.gc.automatic = true;
+  nix.optimise.automatic = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
