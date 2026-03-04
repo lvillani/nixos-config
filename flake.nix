@@ -16,8 +16,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration-common.nix
-          ./configuration.nix
+          ./configuration/common.nix
+          ./configuration/nixos.nix
           inputs.home-manager.nixosModules.home-manager
         ];
       };
@@ -26,8 +26,8 @@
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration-common.nix
-          ./configuration-darwin.nix
+          ./configuration/common.nix
+          ./configuration/darwin.nix
           inputs.home-manager.darwinModules.home-manager
         ];
       };
