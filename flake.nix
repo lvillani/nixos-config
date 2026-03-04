@@ -36,5 +36,10 @@
         pkgs = inputs.nixpkgs.legacyPackages.${builtins.currentSystem};
         modules = [ ./home.nix ];
       };
+
+      packages.aarch64-darwin.nixos-rebuild =
+        inputs.nixpkgs.legacyPackages.aarch64-darwin.nixos-rebuild-ng;
+
+      packages.x86_64-linux.nixos-rebuild = inputs.nixpkgs.legacyPackages.x86_64-linux.nixos-rebuild-ng;
     };
 }
