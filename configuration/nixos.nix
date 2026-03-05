@@ -13,4 +13,7 @@
   boot.plymouth.enable = true;
 
   networking.nftables.enable = true;
+
+  networking.firewall.logRefusedPackets = true;
+  networking.firewall.logReversePathDrops = true;
 }
