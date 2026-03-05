@@ -11,4 +11,6 @@
   boot.loader.timeout = 0;
 
   boot.plymouth.enable = true;
+
+  networking.nftables.enable = true;
 }
