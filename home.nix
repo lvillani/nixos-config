@@ -19,6 +19,9 @@ in
       source = ./files/fish;
       recursive = true;
     };
+    ".tigrc" = {
+      source = ./files/tigrc;
+    };
     "${vscodeUserDirectory}/prompts" = {
       source = ./files/vscode/prompts;
       recursive = true;
@@ -28,6 +31,10 @@ in
       recursive = true;
     };
   };
+
+  home.packages = with pkgs; [
+    tig
+  ];
 
   nix.settings.experimental-features = [
     "nix-command"

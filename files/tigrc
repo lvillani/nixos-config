@@ -1,0 +1,9 @@
+set editor-line-number = no
+set line-graphics = default
+
+bind generic <Down> move-down
+bind generic <Up> move-up
+bind generic g refresh
+bind main R !git rebase --autosquash --interactive %(commit)
+bind status C !git commit --amend
+bind status c !git commit
