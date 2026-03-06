@@ -11,4 +11,6 @@
   networking.applicationFirewall.allowSignedApp = false;
 
   security.pam.services.sudo_local.touchIdAuth = true;
+
+  system.primaryUser = "user";
 }
