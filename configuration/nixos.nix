@@ -12,6 +12,8 @@
 
   boot.plymouth.enable = true;
 
+  documentation.man.generateCaches = false;
+
   networking.nftables.enable = true;
 
   networking.firewall.logRefusedPackets = true;
