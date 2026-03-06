@@ -15,5 +15,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  time.timeZone = "Europe/Rome";
+
   programs.fish.enable = true;
 }
