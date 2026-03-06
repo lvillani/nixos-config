@@ -37,9 +37,14 @@
         modules = [ ./home.nix ];
       };
 
+      # nixos-rebuild
       packages.aarch64-darwin.nixos-rebuild =
         inputs.nixpkgs.legacyPackages.aarch64-darwin.nixos-rebuild-ng;
 
       packages.x86_64-linux.nixos-rebuild = inputs.nixpkgs.legacyPackages.x86_64-linux.nixos-rebuild-ng;
+
+      # home-manager
+      packages.aarch64-darwin.home-manager = inputs.home-manager.packages.aarch64-darwin.default;
+      packages.x86_64-linux.home-manager = inputs.home-manager.packages.x86_64-linux.default;
     };
 }
