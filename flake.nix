@@ -32,8 +32,13 @@
         ];
       };
 
-      homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.${builtins.currentSystem};
+      packages.x86_64-linux.homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./home.nix ];
+      };
+
+      packages.aarch64-darwin.homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
         modules = [ ./home.nix ];
       };
 
