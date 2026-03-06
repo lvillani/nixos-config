@@ -192,6 +192,7 @@ in
     "files.autoSave" = "onFocusChange";
     "github.copilot.nextEditSuggestions.enabled" = true;
     "telemetry.telemetryLevel" = "off";
+    "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
 }
