@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then /Users/user else "/home/user";
 
@@ -34,6 +34,7 @@ in
     tig
   ];
 
+  nix.package = lib.mkDefault pkgs.nix;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
