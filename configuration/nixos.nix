@@ -1,7 +1,5 @@
 { ... }:
 {
-  system.stateVersion = "25.11";
-
   boot.initrd.systemd.enable = true;
 
   boot.kernel.sysctl."kernel.sysrq" = 1;

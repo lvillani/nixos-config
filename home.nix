@@ -9,8 +9,6 @@ let
       ".config/Code/User";
 in
 {
-  home.stateVersion = "25.11";
-
   home.homeDirectory = homeDirectory;
   home.username = "user";
 

@@ -1,7 +1,5 @@
 { ... }:
 {
-  system.stateVersion = 6;
-
   homebrew.enable = true;
   homebrew.brews = [ "mas" ];
   homebrew.onActivation.cleanup = "zap";
