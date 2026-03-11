@@ -12,7 +12,8 @@
   outputs =
     { self, ... }@inputs:
     {
-      nixosConfigurations.main = inputs.nixpkgs.lib.nixosSystem {
+      # NixOS
+      nixosConfigurations.base = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -22,7 +23,8 @@
         ];
       };
 
-      darwinConfigurations.main = inputs.nix-darwin.lib.darwinSystem {
+      # nix-darwin
+      darwinConfigurations.base = inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
         modules = [
@@ -32,12 +34,13 @@
         ];
       };
 
-      packages.x86_64-linux.homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+      # Home Manager (standalone)
+      packages.x86_64-linux.homeConfigurations.base = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
         modules = [ ./home.nix ];
       };
 
-      packages.aarch64-darwin.homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+      packages.aarch64-darwin.homeConfigurations.base = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
         modules = [ ./home.nix ];
       };
