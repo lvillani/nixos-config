@@ -23,6 +23,17 @@
         ];
       };
 
+      nixosConfigurations.base-gnome = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration/common.nix
+          ./configuration/nixos.nix
+          ./configuration/nixos-gnome.nix
+          inputs.home-manager.nixosModules.home-manager
+        ];
+      };
+
       # nix-darwin
       darwinConfigurations.base = inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
