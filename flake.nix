@@ -11,27 +11,25 @@
 
   outputs =
     { self, ... }@inputs:
+    let
+      nixosModules = [
+        ./configuration/common.nix
+        ./configuration/nixos.nix
+        inputs.home-manager.nixosModules.home-manager
+      ];
+    in
     {
       # NixOS
       nixosConfigurations.base = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration/common.nix
-          ./configuration/nixos.nix
-          inputs.home-manager.nixosModules.home-manager
-        ];
+        modules = nixosModules;
       };
 
       nixosConfigurations.base-gnome = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration/common.nix
-          ./configuration/nixos.nix
-          ./configuration/nixos-gnome.nix
-          inputs.home-manager.nixosModules.home-manager
-        ];
+        modules = nixosModules ++ [ ./configuration/nixos-gnome.nix ];
       };
 
       # nix-darwin
