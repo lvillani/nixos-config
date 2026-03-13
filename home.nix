@@ -9,6 +9,22 @@ let
       ".config/Code/User";
 in
 {
+  dconf.settings = {
+    "org/gnome/desktop/input-sources" = {
+      sources = [
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "us+colemak"
+        ])
+        (lib.hm.gvariant.mkTuple [
+          "xkb"
+          "it"
+        ])
+      ];
+      xkb-options = [ "ctrl:nocaps" ];
+    };
+  };
+
   home.homeDirectory = homeDirectory;
   home.username = "user";
 
