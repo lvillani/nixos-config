@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+CURRENT_SYSTEM="$(uname -s)"
+
+main() {
+    if [ "$CURRENT_SYSTEM" = "Darwin" ]; then
+        setup_common
+        setup_darwin
+    elif [ "$CURRENT_SYSTEM" = "Linux" ]; then
+        setup_common
+        setup_linux
+    else
+        echo "Unsupported system: $CURRENT_SYSTEM"
+        exit 1
+    fi
+}
+
+setup_common() {
+    if [ ! -x "$(command -v nix)" ]; then
+        echo "Installing Nix..."
+        if [ -x "$(command -v curl)" ]; then
+            curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install
+        elif [ -x "$(command -v wget)" ]; then
+            wget -qO- https://artifacts.nixos.org/nix-installer | sh -s -- install
+        else
+            echo "Error: curl or wget is required to install Nix."
+            exit 1
+        fi
+    fi
+}
+
+setup_darwin() {
+    sudo nix run .#darwin-rebuild -- switch --flake .
+}
+
+setup_linux() {
+    if [ -f "/etc/NIXOS" ]; then
+        sudo nix run .#nixos-rebuild -- switch --flake .
+    else
+        nix run .#home-manager -- switch --flake .
+    fi
+}
+
+main "$@"
