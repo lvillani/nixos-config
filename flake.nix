@@ -54,6 +54,9 @@
         modules = [ ./home.nix ];
       };
 
+      # darwin-rebuild
+      packages.aarch64-darwin.darwin-rebuild = inputs.nix-darwin.packages.aarch64-darwin.darwin-rebuild;
+
       # nixos-rebuild
       packages.aarch64-darwin.nixos-rebuild =
         inputs.nixpkgs.legacyPackages.aarch64-darwin.nixos-rebuild-ng;
