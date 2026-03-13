@@ -33,14 +33,14 @@ setup_common() {
 }
 
 setup_darwin() {
-    sudo nix run .#darwin-rebuild -- switch --flake .
+    sudo nix run path:.#darwin-rebuild -- switch --flake path:.
 }
 
 setup_linux() {
     if [ -f "/etc/NIXOS" ]; then
-        sudo nix run .#nixos-rebuild -- switch --flake .
+        sudo nix run path:.#nixos-rebuild -- switch --flake path:.
     else
-        nix run .#home-manager -- switch --flake .
+        nix run path:.#home-manager -- switch --flake path:.
     fi
 }
 
