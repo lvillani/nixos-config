@@ -19,7 +19,10 @@
       ];
     in
     {
+      #
       # NixOS
+      #
+
       nixosConfigurations.base = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -32,7 +35,10 @@
         modules = nixosModules ++ [ ./configuration/nixos-gnome.nix ];
       };
 
+      #
       # nix-darwin
+      #
+
       darwinConfigurations.base = inputs.nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = { inherit inputs; };
@@ -43,7 +49,10 @@
         ];
       };
 
+      #
       # Home Manager (standalone)
+      #
+
       packages.x86_64-linux.homeConfigurations.base = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
         modules = [ ./home.nix ];
@@ -53,6 +62,10 @@
         pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
         modules = [ ./home.nix ];
       };
+
+      #
+      # Re-exported packages
+      #
 
       # darwin-rebuild
       packages.aarch64-darwin.darwin-rebuild = inputs.nix-darwin.packages.aarch64-darwin.darwin-rebuild;
