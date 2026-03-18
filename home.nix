@@ -53,6 +53,8 @@ in
     tig
   ];
 
+  nix.keepOldNixPath = false;
+  nix.nixPath = [ "nixpkgs=${builtins.toString pkgs.path}" ];
   nix.package = lib.mkDefault pkgs.nix;
   nix.settings.experimental-features = [
     "nix-command"
