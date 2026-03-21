@@ -7,6 +7,8 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -16,6 +18,11 @@
         ./configuration/common.nix
         ./configuration/nixos.nix
         inputs.home-manager.nixosModules.home-manager
+      ];
+
+      nixosModulesGnome = nixosModules ++ [
+        ./configuration/nixos-gnome.nix
+        inputs.nixos-hardware.nixosModules.framework-13-7040-amd
       ];
     in
     {
@@ -32,7 +39,13 @@
       nixosConfigurations.base-gnome = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = nixosModules ++ [ ./configuration/nixos-gnome.nix ];
+        modules = nixosModulesGnome;
+      };
+
+      nixosConfigurations.base-gnome-framework = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = nixosModulesGnome ++ [ inputs.nixos-hardware.nixosModules.framework-13-7040-amd ];
       };
 
       #
