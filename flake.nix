@@ -20,10 +20,7 @@
         inputs.home-manager.nixosModules.home-manager
       ];
 
-      nixosModulesGnome = nixosModules ++ [
-        ./configuration/nixos-gnome.nix
-        inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-      ];
+      nixosModulesGnome = nixosModules ++ [ ./configuration/nixos-gnome.nix ];
     in
     {
       #
