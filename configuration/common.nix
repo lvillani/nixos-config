@@ -10,9 +10,9 @@
   home-manager.users.user = ../home.nix;
 
   nix.channel.enable = false;
-  nix.extraOptions = "keep-outputs = true";
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
+  nix.settings.keep-outputs = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
