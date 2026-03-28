@@ -25,5 +25,20 @@
   system.defaults.finder.FXPreferredViewStyle = "clmv"; # Column view
   system.defaults.finder.NewWindowTarget = "Home"; # Home directory
 
+  system.defaults.CustomSystemPreferences = {
+    "com.apple.Safari" = {
+      AutoFillCreditCardData = false;
+      AutoFillFromAddressBook = false;
+      AutoFillMiscellaneousForms = false;
+      AutoFillPasswords = false;
+      AutoOpenSafeDownloads = false;
+      SearchProviderIdentifier = "com.duckduckgo";
+      ShowFullURLInSmartSearchField = true;
+    };
+    "com.apple.TextEdit" = {
+      RichText = false;
+    };
+  };
+
   system.primaryUser = "user";
 }
