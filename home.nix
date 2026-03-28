@@ -50,6 +50,7 @@ in
   };
 
   home.packages = with pkgs; [
+    distrobox
     tig
   ];
 
@@ -222,4 +223,6 @@ in
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
+
+  services.podman.enable = true;
 }
