@@ -196,13 +196,31 @@ in
   programs.vscode.profiles.default.extensions =
     with pkgs.vscode-extensions;
     [
+      ban.spellright
+      bmalehorn.vscode-fish
+      charliermarsh.ruff
+      esbenp.prettier-vscode
       github.copilot
       github.copilot-chat
       golang.go
       jnoortheen.nix-ide
+      ms-python.debugpy
+      ms-python.python
+      ms-python.vscode-pylance
+      redhat.ansible
       redhat.vscode-yaml
+      rust-lang.rust-analyzer
+      samuelcolvin.jinjahtml
+      tamasfe.even-better-toml
+      timonwong.shellcheck
     ]
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "nftables";
+        publisher = "ombratteng";
+        version = "0.8.0";
+        sha256 = "sha256-fdgNWH3oQZBMQVTTpqvr2IJO2iv02LnOYzg7e8UKIfM=";
+      }
       {
         name = "rewrap-revived";
         publisher = "dnut";
@@ -211,15 +229,42 @@ in
       }
     ];
   programs.vscode.profiles.default.userSettings = {
+    "[git-commit]" = {
+      "rewrap.wrappingColumn" = 72;
+    };
     "[nix]" = {
       "editor.formatOnSave" = true;
+    };
+    "[python]" = {
+      "editor.rulers" = [
+        88
+        100
+      ];
     };
     "[yaml]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
+    "ansible.lightspeed.enabled" = false;
+    "editor.guides.bracketPairs" = true;
     "editor.inlineSuggest.minShowDelay" = 1000;
+    "editor.renderWhitespace" = "boundary";
+    "files.associations" = {
+      "**/.ssh/config.d/*.conf" = "ssh_config";
+      "nftables.conf" = "nft";
+    };
     "files.autoSave" = "onFocusChange";
+    "files.insertFinalNewline" = true;
+    "files.trimTrailingWhitespace" = true;
     "github.copilot.nextEditSuggestions.enabled" = true;
+    "python.terminal.activateEnvironment" = false;
+    "spellright.documentTypes" = [
+      "git-commit"
+      "markdown"
+    ];
+    "spellright.language" = [
+      "en"
+      "it"
+    ];
     "telemetry.telemetryLevel" = "off";
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
