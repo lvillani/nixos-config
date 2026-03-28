@@ -15,5 +15,9 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.defaults.dock.autohide = true;
+  system.defaults.dock.autohide-delay = 0.0;
+  system.defaults.dock.mru-spaces = false;
+
   system.primaryUser = "user";
 }
