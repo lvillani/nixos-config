@@ -75,6 +75,7 @@ in
     g = "git";
     r = "exec fish";
 
+    gr = "cd (git rev-parse --show-toplevel)";
     p1 = "ping 1.1.1.1";
     p8 = "ping 8.8.8.8";
 
