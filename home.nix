@@ -49,14 +49,9 @@ in
     };
   };
 
-  home.packages =
-    with pkgs;
-    [
-      tig
-    ]
-    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
-      distrobox
-    ];
+  home.packages = with pkgs; [
+    tig
+  ];
 
   nix.keepOldNixPath = false;
   nix.nixPath = [ "nixpkgs=${builtins.toString pkgs.path}" ];
@@ -67,6 +62,8 @@ in
   ];
 
   programs.home-manager.enable = true;
+
+  programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   programs.fish.enable = true;
   programs.fish.plugins = [
