@@ -1,5 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    appcleaner
+    coconutbattery
+  ];
+
   homebrew.enable = true;
   homebrew.brews = [ "mas" ];
   homebrew.onActivation.cleanup = "zap";
