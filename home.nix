@@ -49,10 +49,14 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    distrobox
-    tig
-  ];
+  home.packages =
+    with pkgs;
+    [
+      tig
+    ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+      distrobox
+    ];
 
   nix.keepOldNixPath = false;
   nix.nixPath = [ "nixpkgs=${builtins.toString pkgs.path}" ];
@@ -270,5 +274,5 @@ in
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
 
-  services.podman.enable = true;
+  services.podman.enable = pkgs.stdenv.hostPlatform.isLinux;
 }
