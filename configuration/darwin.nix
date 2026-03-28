@@ -19,5 +19,11 @@
   system.defaults.dock.autohide-delay = 0.0;
   system.defaults.dock.mru-spaces = false;
 
+  system.defaults.finder._FXSortFoldersFirst = true;
+  system.defaults.finder._FXSortFoldersFirstOnDesktop = true;
+  system.defaults.finder.FXDefaultSearchScope = "SCcf"; # Search current folder
+  system.defaults.finder.FXPreferredViewStyle = "clmv"; # Column view
+  system.defaults.finder.NewWindowTarget = "Home"; # Home directory
+
   system.primaryUser = "user";
 }
