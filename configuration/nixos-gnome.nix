@@ -10,6 +10,8 @@
   i18n.extraLocaleSettings.LC_TELEPHONE = "it_IT.UTF-8";
   i18n.extraLocaleSettings.LC_TIME = "it_IT.UTF-8";
 
+  networking.networkmanager.enable = true;
+
   services.desktopManager.gnome.enable = true;
 
   services.displayManager.gdm.enable = true;
