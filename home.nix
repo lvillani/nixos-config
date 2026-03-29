@@ -188,6 +188,8 @@ in
     };
   };
 
+  programs.uv.enable = true;
+
   programs.vim.enable = true;
   programs.vim.extraConfig = ''
     filetype plugin indent on
