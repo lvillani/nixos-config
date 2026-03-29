@@ -50,6 +50,13 @@ in
   };
 
   home.packages = with pkgs; [
+    git-absorb
+    hugo
+    ncdu
+    nixd
+    nixfmt
+    shellcheck
+    shfmt
     tig
   ];
 
