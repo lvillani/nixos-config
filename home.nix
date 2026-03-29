@@ -65,6 +65,19 @@ in
 
   programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;
 
+  programs.firefox.enable = pkgs.stdenv.hostPlatform.isLinux;
+  programs.firefox.policies.ExtensionSettings =
+    let
+      moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
+    in
+    {
+      "uBlock0@raymondhill.net" = {
+        install_url = moz "ublock-origin";
+        installation_mode = "force_installed";
+        updates_disabled = true;
+      };
+    };
+
   programs.fish.enable = true;
   programs.fish.plugins = [
     {
