@@ -16,4 +16,6 @@
 
   networking.firewall.logRefusedPackets = true;
   networking.firewall.logReversePathDrops = true;
+
+  programs.nix-ld.enable = true;
 }
