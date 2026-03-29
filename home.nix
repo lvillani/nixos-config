@@ -176,6 +176,8 @@ in
   programs.go.enable = true;
   programs.go.telemetry.mode = "off";
 
+  programs.htop.enable = true;
+
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
   programs.ssh.includes = [ "config.d/*.conf" ];
