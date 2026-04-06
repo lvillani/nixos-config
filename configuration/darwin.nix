@@ -41,4 +41,9 @@
   };
 
   system.primaryUser = "user";
+
+  users.users.user = {
+    home = "/Users/user";
+    shell = pkgs.fish;
+  };
 }

@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   boot.initrd.systemd.enable = true;
 
@@ -18,4 +18,10 @@
   networking.firewall.logReversePathDrops = true;
 
   programs.nix-ld.enable = true;
+
+  users.users.user = {
+    isNormalUser = true;
+    shell = pkgs.fish;
+    extraGroups = [ "wheel" ];
+  };
 }
