@@ -65,11 +65,13 @@
 
       packages.x86_64-linux.homeConfigurations.base = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs; };
         modules = [ ./home.nix ];
       };
 
       packages.aarch64-darwin.homeConfigurations.base = inputs.home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.aarch64-darwin;
+        extraSpecialArgs = { inherit inputs; };
         modules = [ ./home.nix ];
       };
 
