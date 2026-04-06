@@ -14,6 +14,8 @@
 
   services.desktopManager.gnome.enable = true;
 
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "user";
   services.displayManager.gdm.enable = true;
 
   services.pipewire.enable = true;
