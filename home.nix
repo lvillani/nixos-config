@@ -51,6 +51,7 @@ in
 
   home.packages = with pkgs; [
     git-absorb
+    gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     hugo
     ncdu
