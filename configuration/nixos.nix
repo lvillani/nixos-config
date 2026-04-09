@@ -14,6 +14,7 @@
 
   networking.nftables.enable = true;
 
+  networking.firewall.filterForward = true;
   networking.firewall.logRefusedPackets = true;
   networking.firewall.logReversePathDrops = true;
 
