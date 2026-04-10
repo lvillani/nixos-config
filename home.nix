@@ -1,6 +1,13 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  osConfig ? null,
+  pkgs,
+  ...
+}:
 let
   homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/user" else "/home/user";
+
+  isHomeManagerStandalone = osConfig == null;
 
   vscodeUserDirectory =
     if pkgs.stdenv.hostPlatform.isDarwin then
@@ -298,4 +305,6 @@ in
   };
 
   services.podman.enable = pkgs.stdenv.hostPlatform.isLinux;
+
+  targets.genericLinux.enable = isHomeManagerStandalone;
 }
