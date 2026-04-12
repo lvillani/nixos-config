@@ -22,7 +22,6 @@ applyTo: "**"
 - **Keep it Simple**: Provide the most minimalist, straightforward solution.
 - **Check Dependencies**: Prioritize using libraries already installed in the project before introducing new dependencies.
 - **Standard First**: Favor standard libraries and common patterns.
-- **Directly Address the Request**: Generate code that solves the user's specific problem without adding extras.
 
 ## Code Modification
 
