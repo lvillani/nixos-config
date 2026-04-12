@@ -57,18 +57,22 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    git-absorb
-    gnomeExtensions.appindicator
-    gnomeExtensions.caffeine
-    hugo
-    ncdu
-    nixd
-    nixfmt
-    shellcheck
-    shfmt
-    tig
-  ];
+  home.packages =
+    with pkgs;
+    [
+      git-absorb
+      hugo
+      ncdu
+      nixd
+      nixfmt
+      shellcheck
+      shfmt
+      tig
+    ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+      gnomeExtensions.appindicator
+      gnomeExtensions.caffeine
+    ];
 
   nix.keepOldNixPath = false;
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
