@@ -10,7 +10,6 @@ applyTo: "**"
 
 ## Philosophy
 
-- **Explain First**: Provide natural language explanations. Include code snippets only if they significantly improve clarity.
 - **Be Concise**: Give direct, precise, and concise answers.
 - **Report Errors**: If unrelated errors are found, report them to the user before ignoring or fixing them.
 - **Use Best Practices**: Align all solutions with industry-standard, proven design principles.
