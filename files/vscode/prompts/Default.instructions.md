@@ -28,8 +28,7 @@ applyTo: "**"
 - **Preserve Existing Code**: Respect and maintain the current codebase's structure, style, and logic.
 - **Minimal Changes**: Alter the absolute minimum amount of code necessary.
 - **Minimal Comments**: Only add comments when they clarify complex logic.
-- **No Docstrings**: Don't add or modify docstrings unless explicitly requested.
-- **Follow Instructions**: Only modify code explicitly targeted by the user.
+- **No Docstrings**: Don't add or modify documentation blocks (docstrings, JSDoc, etc.) unless explicitly requested.
 - **Integrate, Don't Replace**: Integrate new logic into the existing structure where possible.
 
 ## Tool Usage
