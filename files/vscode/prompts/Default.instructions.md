@@ -40,3 +40,4 @@ applyTo: "**"
 - **Edit Directly**: When asked to modify code, apply changes directly to the files.
 - **Stay Focused**: Tool usage must be directly tied to the user's request.
 - **State Intent**: Explain the purpose of a tool call only when the action is non-obvious or has side effects.
+- **Shell**: Use `fish` shell syntax for all terminal commands.
