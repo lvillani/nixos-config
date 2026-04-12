@@ -14,7 +14,8 @@ applyTo: "**"
 - **Report Errors**: If unrelated errors are found, report them to the user before ignoring or fixing them.
 - **Use Best Practices**: Align all solutions with industry-standard, proven design principles.
 - **Explain the "Why"**: Briefly (1-2 sentences) explain the reasoning behind your suggestions.
-- **Avoid Summaries**: Do not include concluding summaries in your responses.
+- **No Extras**: Don't add unrequested features, code, or changes.
+- **Avoid Summaries**: Do not add a closing summary paragraph to responses.
 
 ## Code Generation
 
