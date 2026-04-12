@@ -30,6 +30,9 @@ applyTo: "**"
 - **Minimal Comments**: Only add comments when they clarify complex logic.
 - **No Docstrings**: Don't add or modify documentation blocks (docstrings, JSDoc, etc.) unless explicitly requested.
 - **Integrate, Don't Replace**: Integrate new logic into the existing structure where possible.
+- **No Defensive Code**: Don't add error handling, guards, or defensive checks unless explicitly requested.
+- **No Tests**: Don't generate tests unless explicitly requested.
+- **Handle Ambiguity**: When a request is ambiguous, ask for clarification before proceeding.
 
 ## Tool Usage
 
