@@ -265,16 +265,10 @@ in
     ];
   programs.vscode.profiles.default.userSettings = {
     "[git-commit]" = {
-      "rewrap.wrappingColumn" = 72;
+      "editor.rulers" = [ 72 ];
     };
     "[nix]" = {
       "editor.formatOnSave" = true;
-    };
-    "[python]" = {
-      "editor.rulers" = [
-        88
-        100
-      ];
     };
     "[yaml]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
@@ -283,6 +277,7 @@ in
     "editor.guides.bracketPairs" = true;
     "editor.inlineSuggest.minShowDelay" = 1000;
     "editor.renderWhitespace" = "boundary";
+    "editor.rulers" = [ 88 ]; # Use Python's black formatter as a general guide for line length, even in non-Python files
     "files.associations" = {
       "**/.ssh/config.d/*.conf" = "ssh_config";
       "nftables.conf" = "nft";
