@@ -233,10 +233,11 @@ in
   '';
 
   programs.vscode.enable = true;
+  programs.vscode.package = pkgs.unstable.vscode;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
   programs.vscode.profiles.default.enableUpdateCheck = false;
   programs.vscode.profiles.default.extensions =
-    with pkgs.vscode-extensions;
+    with pkgs.unstable.vscode-extensions;
     [
       ban.spellright
       bmalehorn.vscode-fish
@@ -256,7 +257,7 @@ in
       tamasfe.even-better-toml
       timonwong.shellcheck
     ]
-    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    ++ pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "nftables";
         publisher = "ombratteng";
