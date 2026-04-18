@@ -20,6 +20,7 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [ (import ../overlay.nix { inherit inputs; }) ];
 
   time.timeZone = "Europe/Rome";
 

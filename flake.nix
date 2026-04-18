@@ -77,6 +77,12 @@
       };
 
       #
+      # Overlays
+      #
+
+      overlays.default = import ./overlay.nix { inherit inputs; };
+
+      #
       # Re-exported packages
       #
 
