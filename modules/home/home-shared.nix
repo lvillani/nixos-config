@@ -89,9 +89,6 @@ in
     "flakes"
   ];
 
-  nixpkgs.config.allowUnfree = lib.mkIf isHomeManagerStandalone true;
-  nixpkgs.overlays = lib.mkIf isHomeManagerStandalone [ (import ./overlay.nix { inherit inputs; }) ];
-
   programs.home-manager.enable = true;
 
   programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;

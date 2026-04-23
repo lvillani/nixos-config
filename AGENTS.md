@@ -53,10 +53,8 @@ Cross-module references use `inputs.self.*`, e.g. `inputs.self.nixosModules.base
 `pkgs.unstable` (from `nixpkgs-unstable`) is exposed via `overlays/default.nix` and
 applied globally in `flake.nix` via the `nixpkgs.overlays` argument to blueprint. This
 makes `pkgs.unstable` available in all modes (NixOS, nix-darwin, and standalone
-home-manager) without any per-module guards.
-
-`modules/home/home-shared.nix` still carries a `lib.mkIf isHomeManagerStandalone` guard
-on `nixpkgs.overlays` as a safety measure against double-application.
+home-manager) without any per-module guards. `nixpkgs.config.allowUnfree` is also set
+globally in `flake.nix`; no per-module `nixpkgs` settings are needed.
 
 ## Host Configurations
 
