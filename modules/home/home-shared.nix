@@ -274,6 +274,12 @@ in
         version = "1.16.3";
         sha256 = "sha256-KgvAN/zsGf0SKnOeKAfzl6TUqfU5WJ6OeKZjSGSGSvE=";
       }
+      {
+        name = "vscode-python-envs";
+        publisher = "ms-python";
+        version = "1.29.2026042301";
+        sha256 = "sha256-maaEnKMZt/vZXTSSxUEgdr62dok7ybhXrkxSqr6/JPc=";
+      }
     ];
   programs.vscode.profiles.default.userSettings = {
     "[git-commit]" = {
