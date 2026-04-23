@@ -301,6 +301,8 @@ in
     "files.insertFinalNewline" = true;
     "files.trimTrailingWhitespace" = true;
     "github.copilot.nextEditSuggestions.enabled" = true;
+    "nix.enableLanguageServer" = true;
+    "nix.serverPath" = "nixd";
     "python.terminal.activateEnvironment" = false;
     "spellright.documentTypes" = [
       "git-commit"
