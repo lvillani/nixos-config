@@ -1,5 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
+  imports = [ inputs.self.nixosModules.base ];
+
   i18n.extraLocaleSettings.LC_ADDRESS = "it_IT.UTF-8";
   i18n.extraLocaleSettings.LC_IDENTIFICATION = "it_IT.UTF-8";
   i18n.extraLocaleSettings.LC_MEASUREMENT = "it_IT.UTF-8";

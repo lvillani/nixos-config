@@ -1,5 +1,12 @@
-{ pkgs, ... }:
 {
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  imports = [ inputs.self.modules.nixos-and-darwin.shared ];
+
   boot.initrd.systemd.enable = true;
 
   boot.kernel.sysctl."kernel.sysrq" = 1;
@@ -10,13 +17,13 @@
 
   boot.plymouth.enable = true;
 
-  documentation.man.generateCaches = false;
-
   networking.nftables.enable = true;
 
   networking.firewall.filterForward = true;
   networking.firewall.logRefusedPackets = true;
   networking.firewall.logReversePathDrops = true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   programs.nix-ld.enable = true;
 

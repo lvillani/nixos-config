@@ -6,8 +6,6 @@
   ...
 }:
 let
-  homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/user" else "/home/user";
-
   isHomeManagerStandalone = osConfig == null;
 
   terminalCommand = if isHomeManagerStandalone then "gnome-terminal" else "kgx";
@@ -45,26 +43,23 @@ in
     };
   };
 
-  home.homeDirectory = homeDirectory;
-  home.username = "user";
-
   home.file = {
     ".config/fish" = {
-      source = ./files/fish;
+      source = ../../files/fish;
       recursive = true;
     };
     ".local/bin/setup-nix" = {
-      source = ./script/setup-nix;
+      source = ../../script/setup-nix;
     };
     ".tigrc" = {
-      source = ./files/tigrc;
+      source = ../../files/tigrc;
     };
     "${vscodeUserDirectory}/prompts" = {
-      source = ./files/vscode/prompts;
+      source = ../../files/vscode/prompts;
       recursive = true;
     };
     "${vscodeUserDirectory}/snippets" = {
-      source = ./files/vscode/snippets;
+      source = ../../files/vscode/snippets;
       recursive = true;
     };
   };

@@ -1,5 +1,12 @@
-{ pkgs, ... }:
 {
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  imports = [ inputs.self.modules.nixos-and-darwin.shared ];
+
   environment.systemPackages = with pkgs; [
     appcleaner
     coconutbattery
@@ -12,6 +19,8 @@
   networking.applicationFirewall.enable = true;
   networking.applicationFirewall.allowSigned = true;
   networking.applicationFirewall.allowSignedApp = false;
+
+  nixpkgs.hostPlatform = lib.mkDefault "aarch64-darwin";
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
