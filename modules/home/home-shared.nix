@@ -278,7 +278,7 @@ in
         name = "vscode-python-envs";
         publisher = "ms-python";
         version = "1.29.2026042301";
-        sha256 = "sha256-maaEnKMZt/vZXTSSxUEgdr62dok7ybhXrkxSqr6/JPc=";
+        sha256 = "sha256-ac8wjXzDm7l6z6M1XWlH19YCm+dyxaVafQYeXuPvigE=";
       }
     ];
   programs.vscode.profiles.default.userSettings = {
