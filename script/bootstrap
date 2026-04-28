@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+if ! command -v nix >/dev/null 2>&1; then
+    echo "Installing Nix..."
+    if command -v curl >/dev/null 2>&1; then
+        curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm --enable-flakes
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO- https://artifacts.nixos.org/nix-installer | sh -s -- install --no-confirm --enable-flakes
+    else
+        echo "Error: curl or wget is required to install Nix."
+        exit 1
+    fi
+
+    # shellcheck source=/dev/null
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
+nix run path:.

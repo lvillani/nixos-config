@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+CURRENT_SYSTEM="$(uname -s)"
+
+if [ "$CURRENT_SYSTEM" = "Darwin" ]; then
+    nh darwin switch path:.
+elif [ "$CURRENT_SYSTEM" = "Linux" ]; then
+    if [ -f "/etc/NIXOS" ]; then
+        nh os switch path:.
+    else
+        nh home switch path:.
+    fi
+else
+    echo "Unsupported system: $CURRENT_SYSTEM"
+    exit 1
+fi

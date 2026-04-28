@@ -46,9 +46,6 @@ in
       source = ../../files/fish;
       recursive = true;
     };
-    ".local/bin/setup-nix" = {
-      source = ../../script/setup-nix;
-    };
     ".tigrc" = {
       source = ../../files/tigrc;
     };
