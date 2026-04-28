@@ -8,8 +8,6 @@
 let
   isHomeManagerStandalone = osConfig == null;
 
-  terminalCommand = if isHomeManagerStandalone then "gnome-terminal" else "kgx";
-
   vscodeUserDirectory =
     if pkgs.stdenv.hostPlatform.isDarwin then
       "Library/Application Support/Code/User"
@@ -25,7 +23,7 @@ in
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Ctrl><Alt>t";
-      command = terminalCommand;
+      command = "ptyxis";
       name = "Terminal";
     };
     "org/gnome/desktop/input-sources" = {
@@ -79,6 +77,7 @@ in
     ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
+      ptyxis
     ];
 
   nix.keepOldNixPath = false;
