@@ -285,7 +285,7 @@ in
     "[nix]" = {
       "editor.formatOnSave" = true;
     };
-    "[yaml]" = {
+    "[yaml][ansible]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
     "ansible.lightspeed.enabled" = false;
