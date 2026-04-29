@@ -16,16 +16,6 @@ let
 in
 {
   dconf.settings = {
-    "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-      ];
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Ctrl><Alt>t";
-      command = "ptyxis";
-      name = "Terminal";
-    };
     "org/gnome/desktop/input-sources" = {
       sources = [
         (lib.hm.gvariant.mkTuple [
@@ -41,6 +31,16 @@ in
     };
     "org/gnome/desktop/peripherals/touchpad" = {
       natural-scroll = false;
+    };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Ctrl><Alt>t";
+      command = "ptyxis";
+      name = "Terminal";
     };
   };
 
