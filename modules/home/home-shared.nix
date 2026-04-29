@@ -65,6 +65,7 @@ in
       git-absorb
       hugo
       ncdu
+      nh
       nixd
       nixfmt
       shellcheck
