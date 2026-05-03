@@ -303,6 +303,7 @@ in
     "files.autoSave" = "onFocusChange";
     "files.insertFinalNewline" = true;
     "files.trimTrailingWhitespace" = true;
+    "git.autorefresh" = false;
     "github.copilot.nextEditSuggestions.enabled" = true;
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
