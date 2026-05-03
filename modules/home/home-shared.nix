@@ -139,6 +139,7 @@ in
   '';
 
   programs.git.enable = true;
+  programs.git.lfs.enable = true;
   programs.git.ignores = [
     ".cache"
     ".DS_Store"
