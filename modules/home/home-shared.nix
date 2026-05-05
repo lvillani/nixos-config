@@ -123,6 +123,8 @@ in
 
     docker-here = "docker run --rm -it -v (pwd):(pwd) -w (pwd)";
     docker-here2 = "docker run --rm -it -v (pwd):(pwd) -w (pwd) -u (id -u):(id -g)";
+
+    sudo-path = "sudo env PATH=\"$PATH\"";
   };
   programs.fish.shellInit = ''
     set fish_greeting
