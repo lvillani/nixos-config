@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   osConfig ? null,
@@ -94,6 +95,7 @@ in
   programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   programs.firefox.enable = pkgs.stdenv.hostPlatform.isLinux;
+  programs.firefox.configPath = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") "${config.xdg.configHome}/mozilla/firefox"; # Opt-in to 26.05 behavior
   programs.firefox.policies.ExtensionSettings =
     let
       moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
@@ -212,11 +214,9 @@ in
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
   programs.ssh.includes = [ "config.d/*.conf" ];
-  programs.ssh.matchBlocks = {
-    "*" = {
-      serverAliveCountMax = 1;
-      serverAliveInterval = 30;
-    };
+  programs.ssh.settings."*" = {
+    ServerAliveCountMax = 1;
+    ServerAliveInterval = 30;
   };
 
   programs.uv.enable = true;
@@ -240,11 +240,10 @@ in
   '';
 
   programs.vscode.enable = true;
-  programs.vscode.package = pkgs.unstable.vscode;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
   programs.vscode.profiles.default.enableUpdateCheck = false;
   programs.vscode.profiles.default.extensions =
-    with pkgs.unstable.vscode-extensions;
+    with pkgs.vscode-extensions;
     [
       ban.spellright
       bmalehorn.vscode-fish
@@ -264,7 +263,7 @@ in
       tamasfe.even-better-toml
       timonwong.shellcheck
     ]
-    ++ pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace [
+    ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "nftables";
         publisher = "ombratteng";
