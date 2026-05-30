@@ -7,8 +7,6 @@
 {
   imports = [ inputs.self.modules.nixos-and-darwin.shared ];
 
-  boot.initrd.systemd.enable = true;
-
   boot.kernel.sysctl."kernel.sysrq" = 1;
   boot.kernelParams = [ "quiet" ];
 
