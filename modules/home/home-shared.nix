@@ -16,6 +16,8 @@ let
       ".config/Code/User";
 in
 {
+  home.stateVersion = lib.mkDefault "26.05";
+
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
       sources = [
