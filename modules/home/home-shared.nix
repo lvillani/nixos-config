@@ -94,6 +94,9 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
   programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   programs.firefox.enable = pkgs.stdenv.hostPlatform.isLinux;
@@ -255,6 +258,7 @@ in
       github.copilot-chat
       golang.go
       jnoortheen.nix-ide
+      mkhl.direnv
       ms-python.debugpy
       ms-python.python
       ms-python.vscode-pylance
