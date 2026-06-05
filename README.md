@@ -55,7 +55,7 @@ under `legacyPackages` rather than `homeConfigurations`. To extend one, pick the
 
 ```nix
 outputs = inputs: {
-homeConfigurations."user@my-machine" =
+  homeConfigurations."user@my-machine" =
     inputs.nixos-config.legacyPackages.x86_64-linux.homeConfigurations."user@base-nixos".extendModules
     {
         modules = [ ./home.nix ];
