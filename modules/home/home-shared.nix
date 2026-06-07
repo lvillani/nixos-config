@@ -254,8 +254,6 @@ in
       bmalehorn.vscode-fish
       charliermarsh.ruff
       esbenp.prettier-vscode
-      github.copilot
-      github.copilot-chat
       golang.go
       jnoortheen.nix-ide
       mkhl.direnv
@@ -311,7 +309,7 @@ in
     "files.autoSave" = "onFocusChange";
     "files.insertFinalNewline" = true;
     "files.trimTrailingWhitespace" = true;
-        "nix.enableLanguageServer" = true;
+    "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
     "python.terminal.activateEnvironment" = false;
     "spellright.documentTypes" = [
