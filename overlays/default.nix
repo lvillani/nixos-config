@@ -11,14 +11,6 @@ in
     inherit (prev) config;
   };
 }
-// prev.lib.optionalAttrs isDarwinAarch64 {
-  _1password-gui = prev._1password-gui.overrideAttrs (_: {
-    src = prev.fetchurl {
-      url = "https://downloads.1password.com/mac/1Password-8.12.21-aarch64.zip";
-      hash = "sha256-WrWbGzBK65tVNl9Dc3OnJURiPpfbNLOYUJcVT0ETaAs=";
-    };
-  });
-}
 // prev.lib.optionalAttrs (isDarwinAarch64 || isLinuxX86_64) {
   # 1.123.0 is not yet in nixpkgs. Since 1.122, VSCode switched from
   # @vscode/ripgrep to @vscode/ripgrep-universal; patch postPatch accordingly.
