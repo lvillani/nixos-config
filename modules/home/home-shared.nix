@@ -311,8 +311,7 @@ in
     "files.autoSave" = "onFocusChange";
     "files.insertFinalNewline" = true;
     "files.trimTrailingWhitespace" = true;
-    "github.copilot.nextEditSuggestions.enabled" = true;
-    "nix.enableLanguageServer" = true;
+        "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
     "python.terminal.activateEnvironment" = false;
     "spellright.documentTypes" = [
