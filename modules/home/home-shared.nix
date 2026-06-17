@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   osConfig ? null,
   pkgs,
@@ -80,8 +79,6 @@ in
       ptyxis
     ];
 
-  nix.keepOldNixPath = false;
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   nix.package = lib.mkDefault pkgs.nix;
   nix.settings.experimental-features = [
     "nix-command"
