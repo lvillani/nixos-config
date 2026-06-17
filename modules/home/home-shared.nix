@@ -206,7 +206,7 @@ in
     rerere.enabled = true;
     submodule.recurse = true;
     tag.sort = "version:refname";
-    user.email = "lorenzo@villani.me";
+    user.email = lib.mkDefault "lorenzo@villani.me";
     user.name = "Lorenzo Villani";
     user.useConfigOnly = true;
   };
