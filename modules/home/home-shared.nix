@@ -55,10 +55,6 @@ in
     ".tigrc" = {
       source = ../../files/tigrc;
     };
-    "${vscodeUserDirectory}/prompts" = {
-      source = ../../files/vscode/prompts;
-      recursive = true;
-    };
     "${vscodeUserDirectory}/snippets" = {
       source = ../../files/vscode/snippets;
       recursive = true;
