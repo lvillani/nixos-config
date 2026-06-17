@@ -3,7 +3,7 @@ final: prev:
 let
   system = prev.stdenv.hostPlatform.system;
 
-  vscodeVersion = "1.124.0";
+  vscodeVersion = "1.125.0";
   vscodeSystem = {
     aarch64-darwin = "darwin-arm64";
     x86_64-linux = "linux-x64";
@@ -12,12 +12,12 @@ let
     aarch64-darwin = {
       name = "VSCode_${vscodeVersion}_darwin-arm64.zip";
       url = "https://update.code.visualstudio.com/${vscodeVersion}/darwin-arm64/stable";
-      hash = "sha256-9AC7xsB7Wj4WTN7Z0i3H/W/DP54ttPc0wGPNrBFGXrk=";
+      hash = "sha256-dMSYvcryDd8Wqu8GHwnrp5pyRJwLzpV9BDLnpyWcxG0=";
     };
     x86_64-linux = {
       name = "VSCode_${vscodeVersion}_linux-x64.tar.gz";
       url = "https://update.code.visualstudio.com/${vscodeVersion}/linux-x64/stable";
-      hash = "sha256-eUiOpSJCcdDeSk3NRv4fxN3RSrG4axGB6U5zh5DEZXc=";
+      hash = "sha256-TTulHpCiT2eay2tb7e1ub164rgttBnB36Cc4JVoxf08=";
     };
   };
 in
