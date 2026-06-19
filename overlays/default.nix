@@ -30,6 +30,14 @@ in
   vscode = prev.vscode.overrideAttrs (previousAttrs: {
     version = vscodeVersion;
     src = prev.fetchurl vscodeSrc.${system};
+    buildInputs =
+      (previousAttrs.buildInputs or [ ])
+      ++ prev.lib.optionals prev.stdenv.hostPlatform.isLinux [
+        prev.libei
+        prev.libjpeg8
+        prev.libxtst
+        prev.pipewire
+      ];
     postPatch =
       builtins.replaceStrings
         [ "@vscode/ripgrep/bin/rg" ]
