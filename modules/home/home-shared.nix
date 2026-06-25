@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   osConfig ? null,
   pkgs,
@@ -80,6 +81,7 @@ in
     ];
 
   nix.package = lib.mkDefault pkgs.nix;
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
