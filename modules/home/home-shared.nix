@@ -126,6 +126,7 @@ in
 
     docker-here = "docker run --rm -it -v (pwd):(pwd) -w (pwd)";
     docker-here2 = "docker run --rm -it -v (pwd):(pwd) -w (pwd) -u (id -u):(id -g)";
+    nrp = "nix run path:.";
 
     sudo-path = "sudo env PATH=\"$PATH\"";
   };
