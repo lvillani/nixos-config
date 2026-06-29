@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
+  imports = [ inputs.self.modules.common.nix-registry ];
+
   environment.systemPackages = with pkgs; [
     htop
   ];

@@ -16,6 +16,8 @@ let
       ".config/Code/User";
 in
 {
+  imports = [ inputs.self.modules.common.nix-registry ];
+
   home.stateVersion = lib.mkDefault "26.05";
 
   dconf.settings = {
@@ -81,8 +83,6 @@ in
     ];
 
   nix.package = lib.mkDefault pkgs.nix;
-  nix.registry.nixpkgs.flake = inputs.nixpkgs;
-  nix.registry.nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
