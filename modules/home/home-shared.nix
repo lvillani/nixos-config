@@ -82,6 +82,7 @@ in
 
   nix.package = lib.mkDefault pkgs.nix;
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
+  nix.registry.nixpkgs-unstable.flake = inputs.nixpkgs-unstable;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
