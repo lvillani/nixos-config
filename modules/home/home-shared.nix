@@ -50,6 +50,10 @@ in
   };
 
   home.file = {
+    ".agents" = {
+      source = ../../files/agents;
+      recursive = true;
+    };
     ".config/fish" = {
       source = ../../files/fish;
       recursive = true;
