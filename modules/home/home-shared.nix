@@ -261,6 +261,7 @@ in
       ms-python.debugpy
       ms-python.python
       ms-python.vscode-pylance
+      ms-python.vscode-python-envs
       redhat.ansible
       redhat.vscode-yaml
       rust-lang.rust-analyzer
@@ -280,12 +281,6 @@ in
         publisher = "dnut";
         version = "1.16.3";
         sha256 = "sha256-KgvAN/zsGf0SKnOeKAfzl6TUqfU5WJ6OeKZjSGSGSvE=";
-      }
-      {
-        name = "vscode-python-envs";
-        publisher = "ms-python";
-        version = "1.29.2026042301";
-        sha256 = "sha256-ac8wjXzDm7l6z6M1XWlH19YCm+dyxaVafQYeXuPvigE=";
       }
     ];
   programs.vscode.profiles.default.userSettings = {
