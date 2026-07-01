@@ -298,6 +298,9 @@ in
     "[json][jsonc]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
+    "[markdown]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
     "[nix]" = {
       "editor.formatOnSave" = true;
     };
