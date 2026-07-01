@@ -288,8 +288,17 @@ in
     "[git-commit]" = {
       "editor.rulers" = [ 72 ];
     };
+    "[javascript][javascriptreact]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
+    "[json][jsonc]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+    };
     "[nix]" = {
       "editor.formatOnSave" = true;
+    };
+    "[typescript][typescriptreact]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
     "[yaml][ansible]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
