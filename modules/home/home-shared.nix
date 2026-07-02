@@ -306,6 +306,7 @@ in
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
     "ansible.lightspeed.enabled" = false;
+    "chat.agent.sandbox.enabled" = "on";
     "editor.guides.bracketPairs" = true;
     "editor.inlineSuggest.minShowDelay" = 1000;
     "editor.renderWhitespace" = "boundary";
