@@ -5,6 +5,8 @@ IFS=$'\n\t'
 
 CURRENT_SYSTEM="$(uname -s)"
 
+export NH_SHOW_ACTIVATION_LOGS=1
+
 if [ "$CURRENT_SYSTEM" = "Darwin" ]; then
     nh darwin switch path:.
 elif [ "$CURRENT_SYSTEM" = "Linux" ]; then
