@@ -145,11 +145,6 @@ in
       eval (/opt/homebrew/bin/brew shellenv)
     end
 
-    if test "$TERM_PROGRAM" = "vscode"
-      set -x EDITOR code --wait
-    else
-      set -x EDITOR vim
-    end
   '';
 
   programs.git.enable = true;
@@ -250,6 +245,7 @@ in
   '';
 
   programs.vscode.enable = true;
+  programs.vscode.defaultEditor = true;
   programs.vscode.profiles.default.enableExtensionUpdateCheck = false;
   programs.vscode.profiles.default.enableUpdateCheck = false;
   programs.vscode.profiles.default.extensions =
