@@ -332,7 +332,6 @@ in
       "en"
       "it"
     ];
-    "git.autofetch" = false;
     "telemetry.telemetryLevel" = "off";
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
