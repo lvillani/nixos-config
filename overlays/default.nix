@@ -3,7 +3,7 @@ final: prev:
 let
   system = prev.stdenv.hostPlatform.system;
 
-  vscodeVersion = "1.127.0";
+  vscodeVersion = "1.129.0";
   vscodeSystem = {
     aarch64-darwin = "darwin-arm64";
     x86_64-linux = "linux-x64";
@@ -12,12 +12,12 @@ let
     aarch64-darwin = {
       name = "VSCode_${vscodeVersion}_darwin-arm64.zip";
       url = "https://update.code.visualstudio.com/${vscodeVersion}/darwin-arm64/stable";
-      hash = "sha256-IHu9EwW9/oS2FTr/mB7ugMss5Pku3IyslqFYr4riZyk=";
+      hash = "sha256-Gd8J+wdVnLH6aeORdu9ebJhFw+xbTDrtIMuH+85PYn0=";
     };
     x86_64-linux = {
       name = "VSCode_${vscodeVersion}_linux-x64.tar.gz";
       url = "https://update.code.visualstudio.com/${vscodeVersion}/linux-x64/stable";
-      hash = "sha256-4G+zZ5HJuvdJXUt9wPWqqCVOfRpgpe5D5sfevAXJYrU=";
+      hash = "sha256-SaJD020P/Di65fVbMARcPFjzfA8n6NLBJNZqGZaqW34=";
     };
   };
 in
@@ -40,8 +40,8 @@ in
       ];
     postPatch =
       builtins.replaceStrings
-        [ "@vscode/ripgrep/bin/rg" ]
-        [ "@vscode/ripgrep-universal/bin/${vscodeSystem.${system}}/rg" ]
+        [ "@vscode/ripgrep/bin/rg" "node_modules" ]
+        [ "@vscode/ripgrep-universal/bin/${vscodeSystem.${system}}/rg" "node_modules.asar.unpacked" ]
         previousAttrs.postPatch;
   });
 }
