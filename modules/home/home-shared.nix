@@ -335,6 +335,10 @@ in
     "telemetry.telemetryLevel" = "off";
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
+    # Experimental
+    "chat.agentHost.enabled" = true;
+    "sessions.layout.singlePaneDetailPanel" = true;
+    "workbench.experimental.modernUI" = true;
   };
 
   services.podman.enable = pkgs.stdenv.hostPlatform.isLinux;
