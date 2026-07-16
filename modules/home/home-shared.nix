@@ -58,12 +58,12 @@ in
       source = ../../files/fish;
       recursive = true;
     };
+    ".copilot" = {
+      source = ../../files/copilot;
+      recursive = true;
+    };
     ".tigrc" = {
       source = ../../files/tigrc;
-    };
-    "${vscodeUserDirectory}/prompts" = {
-      source = ../../files/vscode/prompts;
-      recursive = true;
     };
     "${vscodeUserDirectory}/snippets" = {
       source = ../../files/vscode/snippets;
