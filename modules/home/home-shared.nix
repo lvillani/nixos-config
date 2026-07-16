@@ -340,6 +340,12 @@ in
     "sessions.layout.singlePaneDetailPanel" = true;
     "workbench.experimental.modernUI" = true;
   };
+  programs.vscode.profiles.default.keybindings = [
+    {
+      key = if pkgs.stdenv.hostPlatform.isDarwin then "cmd+shift+j" else "ctrl+shift+j";
+      command = "workbench.action.toggleMaximizedPanel";
+    }
+  ];
 
   services.podman.enable = pkgs.stdenv.hostPlatform.isLinux;
 
