@@ -37,3 +37,8 @@ folder structure. In that case, read the following files for reference:
 
 - Read the existing flake.nix before making changes to understand the project's
   input/output structure.
+
+## Hashes
+
+`nix-prefetch-url` prints raw **hex** (64 chars). Nix derivations usually want
+**SRI base64** (`sha256-<base64>=`). Convert with `nix hash convert --to sri sha256:<hex>`.
