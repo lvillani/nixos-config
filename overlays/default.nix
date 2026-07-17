@@ -41,7 +41,10 @@ in
     postPatch =
       builtins.replaceStrings
         [ "@vscode/ripgrep/bin/rg" "node_modules" ]
-        [ "@vscode/ripgrep-universal/bin/${vscodeSystem.${system}}/rg" "node_modules.asar.unpacked" ]
+        [
+          "@vscode/ripgrep-universal/bin/${vscodeSystem.${system}}/rg"
+          (if prev.stdenv.hostPlatform.isDarwin then "node_modules.asar.unpacked" else "node_modules")
+        ]
         previousAttrs.postPatch;
   });
 }
