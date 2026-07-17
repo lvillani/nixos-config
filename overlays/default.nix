@@ -4,10 +4,6 @@ let
   system = prev.stdenv.hostPlatform.system;
 
   vscodeVersion = "1.129.0";
-  vscodeSystem = {
-    aarch64-darwin = "darwin-arm64";
-    x86_64-linux = "linux-x64";
-  };
   vscodeSrc = {
     aarch64-darwin = {
       name = "VSCode_${vscodeVersion}_darwin-arm64.zip";
@@ -27,24 +23,8 @@ in
     inherit (prev) config;
   };
 
-  vscode = prev.vscode.overrideAttrs (previousAttrs: {
+  vscode = final.unstable.vscode.overrideAttrs (previousAttrs: {
     version = vscodeVersion;
-    src = prev.fetchurl vscodeSrc.${system};
-    buildInputs =
-      (previousAttrs.buildInputs or [ ])
-      ++ prev.lib.optionals prev.stdenv.hostPlatform.isLinux [
-        prev.libei
-        prev.libjpeg8
-        prev.libxtst
-        prev.pipewire
-      ];
-    postPatch =
-      builtins.replaceStrings
-        [ "@vscode/ripgrep/bin/rg" "node_modules" ]
-        [
-          "@vscode/ripgrep-universal/bin/${vscodeSystem.${system}}/rg"
-          (if prev.stdenv.hostPlatform.isDarwin then "node_modules.asar.unpacked" else "node_modules")
-        ]
-        previousAttrs.postPatch;
+    src = final.unstable.fetchurl vscodeSrc.${system};
   });
 }
