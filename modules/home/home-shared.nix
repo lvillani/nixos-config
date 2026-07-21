@@ -87,6 +87,7 @@ in
     ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       gnomeExtensions.appindicator
       gnomeExtensions.caffeine
+      gradia
       ptyxis
     ];
 
