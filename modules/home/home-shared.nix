@@ -338,6 +338,7 @@ in
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
     # Experimental
     "chat.agentHost.enabled" = true;
+    "github.copilot.chat.agentDebugLog.fileLogging.enabled" = true;
     "sessions.layout.singlePaneDetailPanel" = true;
     "workbench.experimental.modernUI" = true;
   };
