@@ -41,4 +41,7 @@ folder structure. In that case, read the following files for reference:
 ## Hashes
 
 `nix-prefetch-url` prints raw **hex** (64 chars). Nix derivations usually want
-**SRI base64** (`sha256-<base64>=`). Convert with `nix hash convert --to sri sha256:<hex>`.
+**SRI base64** (`sha256-<base64>=`). Convert with `nix hash to-sri sha256:<hex> --type sha256`.
+
+Use `--unpack` only for `fetchzip`/`fetchFromGitHub` (which unpack archives). For
+`fetchurl`, omit `--unpack` since it fetches the raw file without unpacking.
