@@ -27,4 +27,6 @@ in
     version = vscodeVersion;
     src = final.unstable.fetchurl vscodeSrc.${system};
   });
+
+  pi-coding-agent = final.unstable.pi-coding-agent;
 }
