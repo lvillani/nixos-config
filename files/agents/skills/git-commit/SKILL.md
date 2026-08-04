@@ -1,129 +1,81 @@
 ---
 name: git-commit
-description: Read this skill before making git commits.
+description: Read this before you make a git commit.
 ---
 
-## Commit Style Detection
+# Purpose
 
-Before committing, check if the repository already uses Conventional Commits:
+This guide tells you how to write good git commit messages. It also tells you
+how to match the style the repo already uses.
 
-1. Run `git log -n 50 --pretty=format:%s` to inspect recent commit subjects.
-2. If the history follows the Conventional Commits format (`type(scope): summary`), use
-   Conventional Commits.
-3. If not, analyze the existing commit style and replicate it. Match casing,
-   punctuation, prefix conventions, and typical message length.
+# Check the repo's commit style first
 
-## Conventional Commits Format
+Before you write a commit, look at how the repo writes its commits.
 
-Reference: https://www.conventionalcommits.org/en/v1.0.0/
+1. Run `git log -n 25 --pretty=format:%s`.
+2. Read the subjects of the last 25 commits.
+3. If they use Conventional Commits, use that style.
+4. If they do not, copy the style you see. Match the casing, the punctuation,
+   the prefix, and the usual message length.
+
+# Conventional Commits
+
+This is the format:
 
 ```
-<type>[optional scope][!]: <description>
+<type>[optional scope][optional !]: <description>
 
 [optional body]
 
 [optional footer(s)]
 ```
 
-### Types
+More info: https://www.conventionalcommits.org/en/v1.0.0/
 
-| Type       | Use for                                                 |
-| ---------- | ------------------------------------------------------- |
-| `feat`     | New feature (correlates with SemVer MINOR)              |
-| `fix`      | Bug fix (correlates with SemVer PATCH)                  |
-| `docs`     | Documentation only                                      |
-| `style`    | Formatting, missing semicolons, etc. (no logic change)  |
-| `refactor` | Code change that neither fixes a bug nor adds a feature |
-| `perf`     | Performance improvement                                 |
-| `test`     | Adding or updating tests                                |
-| `build`    | Build system or external dependencies                   |
-| `ci`       | CI configuration and scripts                            |
-| `chore`    | Maintenance tasks not covered by other types            |
-| `revert`   | Reverts a previous commit                               |
+## Types
 
-### Scope
+| Type       | Use                                                   |
+| ---------- | ----------------------------------------------------- |
+| `feat`     | Add a new feature.                                    |
+| `fix`      | Fix a bug.                                            |
+| `docs`     | Change documentation only.                            |
+| `style`    | Change formatting only. No logic changes.             |
+| `refactor` | Change code without fixing a bug or adding a feature. |
+| `perf`     | Make things faster or use fewer resources.            |
+| `test`     | Add or update tests.                                  |
+| `build`    | Change the build system or outside dependencies.      |
+| `ci`       | Change CI setup or scripts.                           |
+| `chore`    | Do maintenance that no other type covers.             |
+| `revert`   | Undo a previous commit.                               |
 
-Optional. A noun describing the affected section of the codebase, enclosed in
-parentheses. Choose scope based on the primary module, component, or area being changed.
-Use existing scopes from the repo's history when possible.
+## Scope
 
-### Breaking Changes
+The scope is optional. It is a short word that names the part of the code you
+changed. Put it in parentheses. Use a scope the repo already uses when you can.
 
-Append `!` after the type/scope to signal a breaking change. Optionally include a
-`BREAKING CHANGE:` footer with details.
+## Breaking changes
 
-## Examples
+Add `!` after the type or scope to show a breaking change. You can add a
+`BREAKING CHANGE:` footer with more detail.
 
-```
-feat: add user authentication
-```
+# How to make a commit
 
-```
-fix(parser): handle empty input without crashing
-```
+1. Run `git status` and `git diff` to see what changed.
+2. Check the commit style. See "Check the repo's commit style first" above.
+3. If you were given file paths or globs, stage only those files. Otherwise,
+   stage all the changed files.
+4. If some changes are unclear or unrelated, ask the user before committing.
+5. Write the message in the style you found.
+6. Commit with `git commit -m "<subject>"`. Add `-m "<body>"` if the subject is
+   not enough.
+7. Do not push unless the user asks.
 
-```
-feat(api)!: change response format for /users endpoint
+# Style notes
 
-BREAKING CHANGE: the /users endpoint now returns { data: [...] } instead of [...]
-```
-
-```
-docs: update README with installation instructions
-```
-
-```
-refactor(db): extract query builder into separate module
-```
-
-```
-perf: reduce render time by memoizing expensive computations
-```
-
-```
-chore: update dependencies
-```
-
-```
-test(auth): add integration tests for OAuth flow
-```
-
-```
-ci: add GitHub Actions workflow for release automation
-```
-
-```
-fix: prevent racing of requests
-
-Introduce a request id and a reference to latest request. Dismiss
-incoming responses other than from latest request.
-
-Refs: #123
-```
-
-```
-revert: let us never again speak of the noodle incident
-
-Refs: 676104e, a215868
-```
-
-## Steps
-
-1. Review `git status` and `git diff` to understand the current changes.
-2. Detect commit style (conventional vs. existing repo style) as described above.
-3. If the user specified file paths/globs, only stage those files. Otherwise, stage all
-   changed files.
-4. If there are ambiguous or unrelated changes, ask the user before committing.
-5. Compose the commit message following the detected style.
-6. Commit with `git commit -m "<subject>"`. Add `-m "<body>"` if a body is warranted.
-7. Do NOT push unless explicitly asked.
-
-## Notes
-
-- Subject line should be <= 72 characters. Lowercase after the type prefix. No trailing
-  period.
-- Body is optional. Use it when the _what_ and _why_ need more context than the subject
-  conveys.
-- Do NOT add `Signed-off-by` or other trailers unless the repo convention requires them.
-- Treat user-provided arguments as guidance: freeform text influences the message, file
-  paths limit which files to stage.
+- Keep the subject and body to 72 characters or less.
+- Use lowercase after the type prefix.
+- Do not end the subject with a period.
+- Use the body only when you need to explain what and why. Keep it short.
+- Do not add `Signed-off-by` or other trailers unless the repo requires them.
+- Treat what the user says as guidance. Their text shapes the message, and their
+  file paths limit what you stage.
