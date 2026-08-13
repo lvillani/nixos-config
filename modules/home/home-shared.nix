@@ -336,11 +336,6 @@ in
     "telemetry.telemetryLevel" = "off";
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
-    # Experimental
-    "chat.agentHost.enabled" = true;
-    "github.copilot.chat.agentDebugLog.fileLogging.enabled" = true;
-    "sessions.layout.singlePaneDetailPanel" = true;
-    "workbench.experimental.modernUI" = true;
   };
   programs.vscode.profiles.default.keybindings = [
     {
