@@ -29,9 +29,4 @@ in
   });
 
   pi-coding-agent = final.unstable.pi-coding-agent;
-
-  omp-bin = import ../packages/omp-bin.nix {
-    pkgs = final;
-    system = system;
-  };
 }
