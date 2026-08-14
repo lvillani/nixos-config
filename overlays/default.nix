@@ -6,7 +6,7 @@ final: prev:
     inherit (prev) config;
   };
 
-  vscode = final.unstable.vscode;
-
   pi-coding-agent = final.unstable.pi-coding-agent;
+
+  vscode = final.unstable.vscode;
 }
