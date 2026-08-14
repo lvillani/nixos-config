@@ -65,14 +65,17 @@ Add `!` after the type or scope to show a breaking change. You can add a
 3. If you were given file paths or globs, stage only those files. Otherwise,
    stage all the changed files.
 4. If some changes are unclear or unrelated, ask the user before committing.
-5. Write the message in the style you found.
+5. Write the message in the style you found. Keep the subject/title on one
+   line and never wrap it. Wrap every line of the body to 72 characters or
+   fewer.
 6. Commit with `git commit -m "<subject>"`. Add `-m "<body>"` if the subject is
    not enough.
 7. Do not push unless the user asks.
 
 # Style notes
 
-- Keep the subject and body to 72 characters or less.
+- Never wrap the subject (title); keep it on one line. Wrap every line of the
+  body to 72 characters or fewer.
 - Use lowercase after the type prefix.
 - Do not end the subject with a period.
 - Use the body only when you need to explain what and why. Keep it short.
