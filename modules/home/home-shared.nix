@@ -337,6 +337,7 @@ in
       "it"
     ];
     "telemetry.telemetryLevel" = "off";
+    "terminal.integrated.stickyScroll.enabled" = false;
     "workbench.startupEditor" = "none";
     "yaml.customTags" = [ "!reference sequence" ]; # GitLab CI !reference tag
   };
