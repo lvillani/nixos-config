@@ -63,6 +63,27 @@
         "type": "github"
       }
     },
+    "nix-darwin-nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776202078,
+        "narHash": "sha256-vGBMOrbfxOZdHVBimRw2sn9Iee8BgTy1DCLJKtrTW7k=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "6bd5190096d6d64fb354cac3ba688fb1ad69a197",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "6bd5190096d6d64fb354cac3ba688fb1ad69a197",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "inputs": {
         "nixpkgs": [
@@ -121,6 +142,7 @@
         "blueprint": "blueprint",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
+        "nix-darwin-nh": "nix-darwin-nh",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"

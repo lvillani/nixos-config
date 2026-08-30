@@ -5,7 +5,10 @@
   ...
 }:
 {
-  imports = [ inputs.self.modules.nixos-and-darwin.shared ];
+  imports = [
+    inputs.self.modules.nixos-and-darwin.shared
+    "${inputs.nix-darwin-nh}/modules/programs/nh.nix"
+  ];
 
   environment.systemPackages = with pkgs; [
     appcleaner
@@ -20,9 +23,10 @@
   networking.applicationFirewall.allowSigned = true;
   networking.applicationFirewall.allowSignedApp = false;
 
-  nix.gc.automatic = true;
-
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-darwin";
+
+  programs.nh.enable = true;
+  programs.nh.clean.enable = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 

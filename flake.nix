@@ -14,6 +14,10 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Temporary source until https://github.com/nix-darwin/nix-darwin/pull/1744 is merged.
+    nix-darwin-nh.url = "github:nix-darwin/nix-darwin/6bd5190096d6d64fb354cac3ba688fb1ad69a197";
+    nix-darwin-nh.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
