@@ -23,6 +23,8 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
+  programs.nh.clean.enable = true;
+
   programs.nix-ld.enable = true;
 
   users.users.user = {

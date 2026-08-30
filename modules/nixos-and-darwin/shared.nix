@@ -7,7 +7,6 @@
   ];
 
   nix.channel.enable = false;
-  nix.gc.automatic = true;
   nix.optimise.automatic = true;
   nix.settings.keep-outputs = true;
   nix.settings.experimental-features = [

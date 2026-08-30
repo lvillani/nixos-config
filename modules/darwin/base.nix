@@ -20,6 +20,8 @@
   networking.applicationFirewall.allowSigned = true;
   networking.applicationFirewall.allowSignedApp = false;
 
+  nix.gc.automatic = true;
+
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-darwin";
 
   security.pam.services.sudo_local.touchIdAuth = true;

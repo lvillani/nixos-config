@@ -222,6 +222,9 @@ in
 
   programs.htop.enable = true;
 
+  programs.nh.clean.enable = isHomeManagerStandalone;
+  programs.nh.clean.extraArgs = "--optimise";
+
   programs.ssh.enable = true;
   programs.ssh.enableDefaultConfig = false; # Will print a warning unless set to false, since this option is being deprecated.
   programs.ssh.includes = [ "config.d/*.conf" ];
