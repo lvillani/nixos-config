@@ -24,6 +24,7 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   programs.nh.clean.enable = true;
+  programs.nh.clean.extraArgs = "--optimise";
 
   programs.nix-ld.enable = true;
 

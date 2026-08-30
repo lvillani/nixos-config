@@ -27,6 +27,7 @@
 
   programs.nh.enable = true;
   programs.nh.clean.enable = true;
+  programs.nh.clean.extraArgs = "--optimise";
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
