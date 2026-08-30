@@ -16,4 +16,8 @@
   time.timeZone = "Europe/Rome";
 
   programs.fish.enable = true;
+
+  programs.nh.enable = true;
+  programs.nh.clean.enable = true;
+  programs.nh.clean.extraArgs = "--optimise";
 }

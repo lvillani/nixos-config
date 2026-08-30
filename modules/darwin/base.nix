@@ -25,10 +25,6 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-darwin";
 
-  programs.nh.enable = true;
-  programs.nh.clean.enable = true;
-  programs.nh.clean.extraArgs = "--optimise";
-
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system.defaults.dock.autohide = true;
