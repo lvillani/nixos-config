@@ -14,9 +14,13 @@ let
       "Library/Application Support/Code/User"
     else
       ".config/Code/User";
+
 in
 {
-  imports = [ inputs.self.modules.common.nix-registry ];
+  imports = [
+    inputs.self.modules.common.nix-registry
+    inputs.agent-skills-nix.homeManagerModules.default
+  ];
 
   home.stateVersion = lib.mkDefault "26.05";
 
@@ -50,10 +54,6 @@ in
   };
 
   home.file = {
-    ".agents" = {
-      source = ../../files/agents;
-      recursive = true;
-    };
     ".config/fish" = {
       source = ../../files/fish;
       recursive = true;
@@ -98,6 +98,38 @@ in
   ];
 
   programs.home-manager.enable = true;
+
+  programs.agent-skills.enable = true;
+  programs.agent-skills.skills.enableAll = [
+    "local"
+    "matt-engineering"
+    "matt-productivity"
+  ];
+  programs.agent-skills.sources =
+    let
+      mattSource =
+        (inputs.agent-skills-nix.lib.agent-skills.sourcesFromLock {
+          manifestsDir = ../../skills/registry;
+          lockFile = ../../skills/registry/sources.lock.json;
+        }).matt-pocock-skills;
+      forCategory =
+        category:
+        mattSource
+        // {
+          subdir = "${mattSource.subdir}/${category}";
+          filter.maxDepth = 1;
+        };
+    in
+    {
+      local.path = ../../skills/local;
+      matt-engineering = forCategory "engineering";
+      matt-productivity = forCategory "productivity";
+    };
+  programs.agent-skills.targets.agents = {
+    dest = ".agents/skills";
+    enable = true;
+    structure = "link";
+  };
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
