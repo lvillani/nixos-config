@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   lib,
   osConfig ? null,
@@ -137,7 +136,6 @@ in
   programs.distrobox.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   programs.firefox.enable = pkgs.stdenv.hostPlatform.isLinux;
-  programs.firefox.configPath = lib.mkIf (lib.versionOlder config.home.stateVersion "26.05") "${config.xdg.configHome}/mozilla/firefox"; # Opt-in to 26.05 behavior
   programs.firefox.policies.ExtensionSettings =
     let
       moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
