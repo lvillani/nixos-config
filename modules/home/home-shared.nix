@@ -378,6 +378,10 @@ in
       key = if pkgs.stdenv.hostPlatform.isDarwin then "cmd+shift+j" else "ctrl+shift+j";
       command = "workbench.action.toggleMaximizedPanel";
     }
+    {
+      key = if pkgs.stdenv.hostPlatform.isDarwin then "cmd+shift+alt+j" else "ctrl+shift+alt+j";
+      command = "workbench.action.toggleMaximizedAuxiliaryBar";
+    }
   ];
 
   services.podman.enable = pkgs.stdenv.hostPlatform.isLinux;
