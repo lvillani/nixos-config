@@ -16,7 +16,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Temporary source until https://github.com/nix-darwin/nix-darwin/pull/1744 is merged.
-    nix-darwin-nh.url = "github:nix-darwin/nix-darwin/6bd5190096d6d64fb354cac3ba688fb1ad69a197";
+    nix-darwin-nh.url = "github:nix-darwin/nix-darwin/fed1d4c98d9f679c68a762966f0deada93b7c999";
     nix-darwin-nh.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
