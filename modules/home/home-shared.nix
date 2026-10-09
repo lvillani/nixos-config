@@ -377,7 +377,7 @@ in
       command = "workbench.action.toggleMaximizedPanel";
     }
     {
-      key = if pkgs.stdenv.hostPlatform.isDarwin then "cmd+shift+alt+j" else "ctrl+shift+alt+j";
+      key = if pkgs.stdenv.hostPlatform.isDarwin then "cmd+shift+alt+b" else "ctrl+shift+alt+b";
       command = "workbench.action.toggleMaximizedAuxiliaryBar";
     }
   ];
