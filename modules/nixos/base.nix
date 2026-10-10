@@ -7,9 +7,6 @@
 {
   imports = [ inputs.self.modules.nixos-and-darwin.shared ];
 
-  documentation.man.cache.enable = false;
-  documentation.man.cache.generateAtRuntime = false;
-
   boot.kernel.sysctl."kernel.sysrq" = 1;
   boot.kernelParams = [ "quiet" ];
 
@@ -17,6 +14,9 @@
   boot.loader.timeout = 0;
 
   boot.plymouth.enable = true;
+
+  documentation.man.cache.enable = false;
+  documentation.man.cache.generateAtRuntime = false;
 
   networking.nftables.enable = true;
 
