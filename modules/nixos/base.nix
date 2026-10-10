@@ -7,6 +7,9 @@
 {
   imports = [ inputs.self.modules.nixos-and-darwin.shared ];
 
+  documentation.man.cache.enable = false;
+  documentation.man.cache.generateAtRuntime = false;
+
   boot.kernel.sysctl."kernel.sysrq" = 1;
   boot.kernelParams = [ "quiet" ];
 

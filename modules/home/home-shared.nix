@@ -98,6 +98,8 @@ in
 
   programs.home-manager.enable = true;
 
+  programs.man.generateCaches = false;
+
   programs.agent-skills.enable = true;
   programs.agent-skills.skills.enableAll = [
     "local"
