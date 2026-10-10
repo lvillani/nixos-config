@@ -6,7 +6,7 @@ final: prev:
     inherit (prev) config;
   };
 
-  pi-coding-agent = final.unstable.pi-coding-agent;
+  pi-coding-agent = inputs.pi.packages.${prev.stdenv.hostPlatform.system}.default;
 
   vscode = final.unstable.vscode;
 }

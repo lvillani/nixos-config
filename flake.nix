@@ -23,6 +23,10 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
+
+    pi.url = "github:earendil-works/pi/stable";
+    pi.inputs.nixpkgs.follows = "nixpkgs";
+    pi.inputs.nixpkgs-darwin-x64.follows = "nixpkgs";
   };
 
   outputs =
