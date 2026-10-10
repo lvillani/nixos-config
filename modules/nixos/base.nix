@@ -18,6 +18,11 @@
   documentation.man.cache.enable = false;
   documentation.man.cache.generateAtRuntime = false;
 
+  environment.systemPackages = with pkgs; [
+    bubblewrap
+    socat
+  ];
+
   networking.nftables.enable = true;
 
   networking.firewall.filterForward = true;
