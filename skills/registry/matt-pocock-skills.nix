@@ -3,7 +3,7 @@
     type = "github";
     owner = "mattpocock";
     repo = "skills";
-    at = "v1.2.3";
+    at = "v1.3.1";
   };
   subdir = "skills";
 }

@@ -7,7 +7,7 @@
       },
       "idPrefix": null,
       "pin": {
-        "at": "v1.2.3",
+        "at": "v1.3.1",
         "branch": null,
         "owner": "mattpocock",
         "preReleases": false,
@@ -23,7 +23,7 @@
   "npins": {
     "pins": {
       "matt-pocock-skills": {
-        "hash": "sha256-I/EXHGW92nXz6JCLp8SKGgzXrbbUTkLAfxv8bc/ThwQ=",
+        "hash": "sha256-/mAmj7QFdyOWhLmy3Rt2/Hfsh5qwirTRax7hmQffFdo=",
         "pre_releases": false,
         "release_prefix": null,
         "repository": {
@@ -31,11 +31,11 @@
           "repo": "skills",
           "type": "GitHub"
         },
-        "revision": "835450ef244ab7335f75d95b83e7d979eae22a6d",
+        "revision": "0b6cee10f260a2e048279cf737bfd3e37b1fce0b",
         "submodules": false,
         "type": "GitRelease",
-        "url": "https://api.github.com/repos/mattpocock/skills/tarball/refs/tags/v1.2.3",
-        "version": "v1.2.3",
+        "url": "https://api.github.com/repos/mattpocock/skills/tarball/refs/tags/v1.3.1",
+        "version": "v1.3.1",
         "version_upper_bound": null
       }
     },
