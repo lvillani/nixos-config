@@ -303,7 +303,6 @@ in
       ms-python.python
       ms-python.vscode-pylance
       ms-python.vscode-python-envs
-      redhat.ansible
       redhat.vscode-yaml
       rust-lang.rust-analyzer
       samuelcolvin.jinjahtml
@@ -343,10 +342,9 @@ in
     "[typescript][typescriptreact]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
     };
-    "[yaml][ansible]" = {
+    "[yaml]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
-    "ansible.lightspeed.enabled" = false;
     "editor.guides.bracketPairs" = true;
     "editor.inlineSuggest.minShowDelay" = 1000;
     "editor.renderWhitespace" = "boundary";
