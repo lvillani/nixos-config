@@ -6,3 +6,4 @@
 - Use the harness `ask` tool to ask questions, especially when using the "grilling"
   skill.
 - Run terminal commands with `fish`.
+- Do not add `Co-authored-by` trailers to commit messages.

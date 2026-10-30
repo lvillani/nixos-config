@@ -345,6 +345,7 @@ in
     "[yaml]" = {
       "editor.defaultFormatter" = "redhat.vscode-yaml";
     };
+    "chat.agentHost.copilot.includeCoAuthoredBy" = false;
     "editor.guides.bracketPairs" = true;
     "editor.inlineSuggest.minShowDelay" = 1000;
     "editor.renderWhitespace" = "boundary";
@@ -356,6 +357,7 @@ in
     "files.autoSave" = "onFocusChange";
     "files.insertFinalNewline" = true;
     "files.trimTrailingWhitespace" = true;
+    "git.addAICoAuthor" = "off";
     "nix.enableLanguageServer" = true;
     "nix.serverPath" = "nixd";
     "python.terminal.activateEnvironment" = false;
