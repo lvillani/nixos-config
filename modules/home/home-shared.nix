@@ -57,10 +57,7 @@ in
       source = ../../files/fish;
       recursive = true;
     };
-    ".copilot" = {
-      source = ../../files/copilot;
-      recursive = true;
-    };
+    ".copilot/copilot-instructions.md".source = ../../files/agent-instructions.md;
     ".tigrc" = {
       source = ../../files/tigrc;
     };
