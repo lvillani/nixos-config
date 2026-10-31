@@ -27,6 +27,10 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.defaults.NSGlobalDomain."com.apple.swipescrolldirection" = false;
+  system.defaults.trackpad.Clicking = true;
+  system.defaults.trackpad.TrackpadThreeFingerDrag = true;
+
   system.defaults.dock.autohide = true;
   system.defaults.dock.autohide-delay = 0.0;
   system.defaults.dock.mru-spaces = false;
