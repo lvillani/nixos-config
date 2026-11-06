@@ -58,6 +58,9 @@ in
       recursive = true;
     };
     ".copilot/copilot-instructions.md".source = ../../files/agent-instructions.md;
+    ".copilot/settings.json".text = builtins.toJSON {
+      includeCoAuthoredBy = false;
+    };
     ".tigrc" = {
       source = ../../files/tigrc;
     };
